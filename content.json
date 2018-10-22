@@ -1,0 +1,208 @@
+{
+ "address": "1ZTAGS56qz1zDDxW2Ky19pKzvnyqJDy6J",
+ "address_index": 14886911,
+ "background-color": "#FFF",
+ "clone_root": "template-new",
+ "cloned_from": "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D",
+ "description": "Zitetag registration service for the Zer0net.",
+ "favicon": "images/icon.png",
+ "files": {
+  ".git/COMMIT_EDITMSG": {
+   "sha512": "8d510a8934ba2b25c9e20c681d100f65ecc0e81698d8540a368b5d50ef66d681",
+   "size": 36
+  },
+  ".git/HEAD": {
+   "sha512": "76b199f1bffdc6d21547895431b0f85f3857df400225cbd1ae55e7ded09786a8",
+   "size": 23
+  },
+  ".git/ORIG_HEAD": {
+   "sha512": "42c68adb2460fb585b106e795b3ccaa589860e739dadacc32ce121d0b3d300e6",
+   "size": 41
+  },
+  ".git/config": {
+   "sha512": "51a4891f178814ab4c3aec44072abbfaf9aa38c6ed4ae540c4d0d8608786af86",
+   "size": 356
+  },
+  ".git/description": {
+   "sha512": "f7e152f75b124c3e1c5d12f00427729d9eec4e2c1bf70d7606440a6600d00336",
+   "size": 73
+  },
+  ".git/hooks/applypatch-msg.sample": {
+   "sha512": "536cce804d84e25813993efdd240537b52d00ce9cdcecf1982f85096d56a5212",
+   "size": 478
+  },
+  ".git/hooks/commit-msg.sample": {
+   "sha512": "d6bb7fa747f4625adf1877f546565cbe812ca7dd4168f7e9068e6732555d8737",
+   "size": 896
+  },
+  ".git/hooks/post-update.sample": {
+   "sha512": "473ad124642571656276bf83b9ff63ab1804d3c23a5bdae52391c6f70a894849",
+   "size": 189
+  },
+  ".git/hooks/pre-applypatch.sample": {
+   "sha512": "cb78aa7e9b9c146e5db65d86dd83f04e2b6942a06fab50c704a0fd900683f3b6",
+   "size": 424
+  },
+  ".git/hooks/pre-commit.sample": {
+   "sha512": "4a7ac2ed2ffe50d2a997c3477b5855c3d19423c295a82f7d660be3418217a183",
+   "size": 1642
+  },
+  ".git/hooks/pre-push.sample": {
+   "sha512": "37cd20a090494acb16c2255fe93dadeb409f2553afddc409dad5b5e99c9f5612",
+   "size": 1348
+  },
+  ".git/hooks/pre-rebase.sample": {
+   "sha512": "00d21d5d72386c3d9b5a1c36ba85201f730556a8295d4353af54af7892ab8101",
+   "size": 4898
+  },
+  ".git/hooks/pre-receive.sample": {
+   "sha512": "ee08c11fab7e896b2e09c241954ba7640338b12c75cd8040daf053c31b2f2223",
+   "size": 544
+  },
+  ".git/hooks/prepare-commit-msg.sample": {
+   "sha512": "50ec8a0dd98427e80a82a8d8ce44462a845876e1594c9d0e89483ce9a8aaad61",
+   "size": 1492
+  },
+  ".git/hooks/update.sample": {
+   "sha512": "759abd33e5d1dda9b3e3d3116c47b23f616320d70cd66d567b1c4eeefeb6d785",
+   "size": 3610
+  },
+  ".git/index": {
+   "sha512": "5e1fafafd4fcb9096e82a4066c721b33095e19fa83cee765cd76f6dbcf38c12b",
+   "size": 291
+  },
+  ".git/info/exclude": {
+   "sha512": "9828c6ecdf91bf117416e17f4ee9caee2e1e37b6fb00b9ff04035ace17a3089b",
+   "size": 240
+  },
+  ".git/logs/HEAD": {
+   "sha512": "e82802a88779f25d80f2025e0e0c54c5229bd42cc701bc388ddb85dc4bf4954c",
+   "size": 473
+  },
+  ".git/logs/refs/heads/master": {
+   "sha512": "e82802a88779f25d80f2025e0e0c54c5229bd42cc701bc388ddb85dc4bf4954c",
+   "size": 473
+  },
+  ".git/logs/refs/remotes/origin/master": {
+   "sha512": "f30c4ec3ceaa252309ac32893a72b6f04d737d9311fa7299b3ad8bbdf835eecc",
+   "size": 140
+  },
+  ".git/objects/1a/8178b934a773cbd47dc994ba9dff2c302ac7c0": {
+   "sha512": "7b31ce4b71266005205ce0b2fce5d2ac5c3bd3d6d8180f56d8e0427dfc6ce9a8",
+   "size": 675
+  },
+  ".git/objects/1f/717dcef306e8063dd3e424b653f38551a85fec": {
+   "sha512": "1e43b5d6a5d0a6e829ac249979d482b2ea79178ee94efb2f0f4935d9772e614a",
+   "size": 120
+  },
+  ".git/objects/26/04003e5ddbe328378c77f29808121aa8e6fa4e": {
+   "sha512": "655e1f3f08561f3b7effd98aae80e8406aa7e93abfc23741eb87e99f592ff7be",
+   "size": 62
+  },
+  ".git/objects/4d/f155e3006fbf672c6db727451610f2b35516e3": {
+   "sha512": "7bcc712bb4bb534c96c23903d563b0f2581819f57ce3f5fbb996ff6abf0440c7",
+   "size": 1757
+  },
+  ".git/objects/67/48eeb7ef0eb9354fa3f808a2bb31b71717d6e6": {
+   "sha512": "6d6f3903aa766b968ab455681c8ea18a669d2a88d25e09a083894d4d150ab5f8",
+   "size": 121
+  },
+  ".git/objects/7c/7b918504b85b92dfd27183e7212d135828df9b": {
+   "sha512": "2436d83d596849938972d350c9d69cfae9420d7298dcafb88f9b9dbdb0ada730",
+   "size": 47059
+  },
+  ".git/objects/97/46051d90988b0bc2ab3ef7944c59f94ccc1df4": {
+   "sha512": "5482eeee22b7e4cedadd48af5fb79ff1ea93ca151d68951b109a0f59c2f5b6b3",
+   "size": 28391
+  },
+  ".git/objects/9b/4f7b592f11def2761565f7cd5f7a8e12c9505c": {
+   "sha512": "2422500ec359c348192ebf6829d5d0a981861aed92ef30562cd1d5f1d903ee13",
+   "size": 1204
+  },
+  ".git/objects/a9/a7b4a2314ff7fc4b11440fc7dda751fe56cba8": {
+   "sha512": "fefca566f06e704531492babdcb2cf20ff31c7525355aed7b51b65b717c90b8e",
+   "size": 53
+  },
+  ".git/objects/b0/1890bf07082e69ed6e19abc0fc9612d1ef4a89": {
+   "sha512": "a1489e333be308c49b05b0ebf58562b8ac71673a60d9aa5136535f780f2779bc",
+   "size": 1198
+  },
+  ".git/objects/bb/0cf5e085d640773d0dbef4d7816691f8af2fa4": {
+   "sha512": "a30d59d10f816c5b3e44ed0c3f5db45aa66b5c8798bd48c1d7ede678ffc49823",
+   "size": 250
+  },
+  ".git/objects/c3/a00afe47e635fb203fa21fe3492b624b14d132": {
+   "sha512": "3239ce67a860803722398a7b21cc8f05b62481fb9915d1527d3fa5283f0c3315",
+   "size": 651
+  },
+  ".git/objects/e2/b04d842dea544fb6f10c2e65a3e650491ae8c4": {
+   "sha512": "4b3fa4c2bca1ce7df81e09cb27f7ee71715dec92d9ed02a74afb5dad6fb2e028",
+   "size": 466
+  },
+  ".git/objects/f6/e86c59481f7fe969fde2ea13ca16b1f542783d": {
+   "sha512": "a9da8f591d01f4f6769db599e476fc9fe4073e1d456ca933a84d6b58804d2daa",
+   "size": 171
+  },
+  ".git/refs/heads/master": {
+   "sha512": "d7d4c6dc22412510dbf6046057e23d0d29d7cfa2cc72bf5922f49930b20de707",
+   "size": 41
+  },
+  ".git/refs/remotes/origin/master": {
+   "sha512": "d7d4c6dc22412510dbf6046057e23d0d29d7cfa2cc72bf5922f49930b20de707",
+   "size": 41
+  },
+  "LICENSE": {
+   "sha512": "772987556efbdb6ceba6af1b23597c76f2db3bf5d1a0b74f158046134954db0e",
+   "size": 1062
+  },
+  "README.md": {
+   "sha512": "b42d6eafce73a298fa5f6b7f1508e3295c4b057669689d20612e8e98a9f9b95f",
+   "size": 730
+  },
+  "css/bootstrap.min.css": {
+   "sha512": "7e3655f8208d87ecc6b449b38949b32a08dffd6f7e830d0edcc30c8afbb49ca2",
+   "size": 142041
+  },
+  "images/icon.png": {
+   "sha512": "19949b24fc1f5f2ee31ee5424a66eb61ef1e61dc57f703c4a8cd78d4e04e1451",
+   "size": 47730
+  },
+  "index.html": {
+   "sha512": "3791b31fd48f88d5e5ab864d357ae1db56c7718efed597b5abcad1593dc9b00d",
+   "size": 11523
+  },
+  "js/main.js": {
+   "sha512": "47e12769172ed09ddc4aff7f2d28f4d877b2aa9e073de4fb8dfb63e4d3defd15",
+   "size": 6045
+  },
+  "libs/bitcoin.js": {
+   "sha512": "ff5ebb307328bd9e4ac8ce928ea17530da8dd5ea83290b69a191b334bceaff9e",
+   "size": 590692
+  },
+  "libs/ethers.min.js": {
+   "sha512": "9d9dd9a0f18f490e8712332742d4d695d07c9f77d959c464d338e0abe8948baf",
+   "size": 291176
+  },
+  "libs/namecoin.js": {
+   "sha512": "1f2e9f01b7a3ea96e3e83fb513e39b0399e8dfb00697523fa406ad1e6025d0bd",
+   "size": 1633846
+  },
+  "libs/web3.min.js": {
+   "sha512": "6569dd00643c1afb44982ebf9dc36f2a4b13b878c10762e63f90ab4509ecd152",
+   "size": 810884
+  }
+ },
+ "ignore": "",
+ "inner_path": "content.json",
+ "modified": 1539941900,
+ "postmessage_nonce_security": true,
+ "signers_sign": "HECeKXnJ9vZcIpin1dlRSu35oxbRQouDUsxXX3mQ4x8fKeMvdlbRGrSHEfg0G5NrzTvxt99JzE31wR/2x5T0PI0=",
+ "signs": {
+  "1ZTAGS56qz1zDDxW2Ky19pKzvnyqJDy6J": "HEnt0fFnlHeEIXx0L0hzd3TfW8ZXbfCWTEY/Z8dyw1pKefj/cTkEaGDuDJV1Dc9w9LZMBgyrVSdGEczcfByjvKw="
+ },
+ "signs_required": 1,
+ "title": "Zitetags",
+ "translate": ["js/all.js"],
+ "viewport": "width=device-width, initial-scale=1.0",
+ "zeronet_version": "0.6.3"
+}
