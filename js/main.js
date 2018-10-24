@@ -41,6 +41,7 @@ const vueAppManager = {
         ziteAddress: 'n/a',
         zitePeers: 0,
         ziteSize: 0,
+        certProviders: {},
 
         /* User Details */
         userId: null,
@@ -124,6 +125,17 @@ const vueAppManager = {
             const siteInfo = await Zero.cmd('siteInfo', {})
             console.log('Site info', siteInfo)
 
+            /* Set certificate providers. */
+            this.certProviders = {
+                'accepted_domains': [
+                    // 'ethnick.bit',
+                    'kxoid.bit',
+                    'nametag.bit',
+                    // 'xyzid.bit',
+                    'zeroid.bit'
+                ]
+            }
+
             /* Validate user authentication. */
             if (siteInfo['cert_user_id']) {
                 /* Set user id. */
@@ -136,15 +148,9 @@ const vueAppManager = {
                 /* Set public key. */
                 this.publicKey = publicKey
 
-                // $.getJSON(`https://zitetags.0net.io/profile-add/${this.query}`, (_data) => {
-                //     console.log('DATA', _data)
-                // })
-
-                // const decoded = Buffer.from(publicKey, 'base64')
-                // console.log('Public key (HEX)', decoded.toString('hex'))
-
-                // TEMP FOR TESTING PURPOSES ONLY
-                Zero.cmd('certSelect', { 'accepted_domains': ['ethnick.bit', 'kxoid.bit', 'nametag.bit', 'xyzid.bit', 'zeroid.bit'] })
+                $.getJSON(`https://zitetags.0net.io/profile/${encodeURIComponent(this.publicKey)}`, (_profile) => {
+                    console.log('PROFILE', _profile)
+                })
             } else {
                 console.log('User is NOT signed in.');
             }
@@ -187,10 +193,11 @@ My Public Key: ${this.publicKey}
             window.location = '/zerocoding.bit'
         },
 
+        myAccount: function () {
+            Zero.cmd('certSelect', this.certProviders)
+        },
+
         register: async function () {
-            /* Retrieve public key. */
-            const publicKey = await Zero.cmd('userPublickey', {})
-            console.log('Public key', publicKey)
             if (this.userId) {
                 $('#regModal').modal('show')
             } else {
@@ -200,7 +207,7 @@ My Public Key: ${this.publicKey}
                 /* Validate response. */
                 if (response) {
                     /* Request user certificate. */
-                    const success = await Zero.cmd('certSelect', { 'accepted_domains': ['ethnick.bit', 'kxoid.bit', 'nametag.bit', 'xyzid.bit', 'zeroid.bit'] })
+                    const success = await Zero.cmd('certSelect', this.certProviders)
                     console.log('SIGNED IN', success)
 
                     /* Validate successful sign in . */
@@ -239,7 +246,7 @@ My Public Key: ${this.publicKey}
 
             console.log(`So you are looking for [ ${this.query} ]`)
 
-            $.getJSON(`https://zitetags.0net.io/name/d/${this.query}`, (_data) => {
+            $.getJSON(`https://zitetags.0net.io/name/d/${encodeURIComponent(this.query)}`, (_data) => {
                 console.log('DATA', _data)
 
                 if (_data && _data.error) {

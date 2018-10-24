@@ -23,7 +23,7 @@
     </style>
 </head>
 
-<body class="bg-light">
+<body>
 
 <div id="app" class="container">
     <div class="col-md-8 offset-md-2">
@@ -37,7 +37,22 @@
             </p>
         </div>
 
-        <div class="col-md-10 offset-md-1">
+        <ul class="col-md-10 offset-md-1 nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" href="javascript://">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logs/">Event Logs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript://" @click="myAccount">My Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="javascript://">Need Help?</a>
+            </li>
+        </ul>
+
+        <div class="col-md-10 offset-md-1 mt-3">
             <!-- Full Version -->
             <div class="input-group input-group-lg d-none d-sm-flex">
                 <div class="input-group-prepend">
@@ -97,7 +112,7 @@
                 </button>
             </div>
 
-            <div :class="{ 'd-flex': _hasSuccess }" class="d-none fade show" role="alert">
+            <div :class="{ 'd-flex': _hasSuccess }" class="d-none fade show mt-3" role="alert">
                 <button :class="{ 'd-flex': showReg }" @click="register" class="btn btn-info btn-lg">Register it!</button>
             </div>
 
@@ -133,7 +148,7 @@
             <ul class="list-group mt-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
-                        ~8 Month Registration
+                        1-Year Registration
                     </div>
                     <div>
                         <span class="badge badge-danger badge-pill">US$0.00*</span>
@@ -142,10 +157,11 @@
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
-                        ~8 Month Renewal
+                        1-Year Renewal
                     </div>
                     <div>
-                        <span class="badge badge-info badge-pill">US$0.99</span>
+                        <span class="badge badge-danger badge-pill">US$0.00*</span>
+                        <span class="badge badge-info badge-pill"><span class="discount">US$0.99</span></span>
                     </div>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -153,9 +169,11 @@
                         Registration Update
                     </div>
                     <div>
-                        <span class="badge badge-info badge-pill">US$0.99 each</span>
+                        <span class="badge badge-danger badge-pill">US$0.00*</span>
+                        <span class="badge badge-info badge-pill"><span class="discount">US$0.99 each</span></span>
                     </div>
                 </li>
+<!--
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
                         SecureTag Vault Action <small class="text-muted">[24 hours]</small>
@@ -164,15 +182,16 @@
                         <span class="badge badge-info badge-pill">US$9.99 each</span>
                     </div>
                 </li>
+ -->
             </ul>
 
             <div class="row ml-1">
-                <div class="col">
-                    <small>
-                        * Zer0net Resident registrations are temporarily FREE during our initial launch.
-                        Please DO NOT abuse this service or you will be blocked.
+                <div class="col-11">
+                    <small class="text-muted"><em>
+                        * ALL fees for Zer0net Residents are <u>temporarily</u> FREE during our initial launch.
+                        Please DO NOT abuse this service or you WILL be restricted.
                         Thanks so much for your support!
-                    </small>
+                    </em></small>
                 </div>
             </div>
 
@@ -185,13 +204,13 @@
             <ul class="list-group mt-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
-                        ~8 Month Registration
+                        1-Year Registration
                     </div>
                     <span class="badge badge-info badge-pill">US$8.99</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
-                        ~8 Month Renewal
+                        1-Year Renewal
                     </div>
                     <span class="badge badge-info badge-pill">US$2.99</span>
                 </li>
@@ -203,6 +222,7 @@
                         <span class="badge badge-info badge-pill">US$2.99 each</span>
                     </div>
                 </li>
+<!--
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
                         SecureTag Vault Action <small class="text-muted">[24 hours]</small>
@@ -211,6 +231,7 @@
                         <span class="badge badge-info badge-pill">US$29.99 each</span>
                     </div>
                 </li>
+ -->
             </ul>
 
             <div class="mt-5 mb-3 text-center">
@@ -231,7 +252,7 @@
             </ul>
         </div>
 
-        <footer class="my-3 text-muted text-center text-small">
+        <footer class="my-5 text-muted text-center text-small">
             <p class="mb-1">&copy; 2018 <a href="/d14na.bit">D14na</a> MDAO</p>
 
             <ul class="list-inline">

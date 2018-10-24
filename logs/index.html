@@ -12,9 +12,17 @@
 
 <div id="app" class="container">
     <div class="col-md-8 offset-md-2">
-        <h1 class="mt-5">Event Logs</h1>
+        <h1 class="mt-5">
+            Event Logs
+            <em class="text-muted"><small><small><small><small>last 24 hours</small></small></small></small></em>
+        </h1>
 
-        <ul class="nav nav-tabs mt-3">
+        <strong><span class="text-muted">Smart Contract Viewer</span> <span class="text-danger">→</span></strong>
+        <a href="https://etherscan.io/address/0xea5a490fb229c71c0da384a6ea1426eb804b0652#events" target="_top" class="btn btn-sm btn-outline-info">
+            0xea5a490fb229c71c0da384a6ea1426eb804b0652
+        </a>
+
+        <ul class="nav nav-pills mt-3">
             <li class="nav-item">
                 <a class="nav-link active" href="javascript://">View All</a>
             </li>
@@ -50,8 +58,8 @@
 <!-- Browserified JS Libraries -->
 <script src="../libs/buffer.js"></script>
 
-<!-- Events JS -->
-<script src="../js/events.js"></script>
+<!-- Event Logs JS -->
+<script src="../js/logs.js"></script>
 
 </body>
 </html>
