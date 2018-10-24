@@ -14,4 +14,4 @@ Similar to Twitter **`#` hashtags,** zitetags provide a convenient alias for use
 
 ##### API Endpoint
 
-    https://api.zitetags.com/
+    https://zitetags.0net.io
