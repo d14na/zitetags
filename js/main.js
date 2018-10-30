@@ -46,6 +46,7 @@ const vueAppManager = {
         /* User Details */
         userId: null,
         publicKey: null,
+        authKey: null, // FIXME `auth_key` is DEPRECATED in Core, replace with Pub/Priv key auth.
 
         /* Search details */
         query: '',
@@ -64,6 +65,15 @@ const vueAppManager = {
         this._init()
     },
     computed: {
+        /**
+         * Calculate Info Hash
+         */
+        _authHash: function () {
+            /* Compute the SHA-1 hash of the data provided. */
+            // FIXME `auth_key` is DEPRECATED in Core, replace with Pub/Priv key auth.
+            return CryptoJS.createHash('sha1').update(this.authKey).digest('hex')
+        },
+
         /* Calculate estimated expiration date. */
         _estimateExp: function () {
             if (this.expired) {
@@ -125,6 +135,12 @@ const vueAppManager = {
             const siteInfo = await Zero.cmd('siteInfo', {})
             console.log('Site info', siteInfo)
 
+            /* Set authorization key. */
+            // FIXME `auth_key` is DEPRECATED in Core, replace with Pub/Priv key auth.
+            this.authKey = siteInfo['auth_key']
+
+            console.log('Auth key / hash', this.authKey, this._authHash)
+
             /* Set certificate providers. */
             this.certProviders = {
                 'accepted_domains': [
@@ -143,13 +159,33 @@ const vueAppManager = {
 
                 /* Retrieve public key. */
                 const publicKey = await Zero.cmd('userPublickey', {})
+
                 console.log('Public key', publicKey)
 
                 /* Set public key. */
                 this.publicKey = publicKey
 
-                $.getJSON(`https://zitetags.0net.io/profile/${encodeURIComponent(this.publicKey)}`, (_profile) => {
-                    console.log('PROFILE', _profile)
+                /* Initialize url. */
+                let url = `https://zitetags.0net.io/profile/${encodeURIComponent(this.publicKey)}`
+                console.log('ENDPOINT', url)
+
+                // $.getJSON(url, (_profile) => {
+                //     console.log('PROFILE', _profile)
+                // })
+
+                /* Initialize data type. */
+                const dataType = 'json'
+
+                $.ajax({
+                    beforeSend: (request) => {
+                        request.setRequestHeader('X-0net-Auth-Key', this.authKey)
+                        request.setRequestHeader('X-0net-Public-Key', this.publicKey)
+                    },
+                    dataType,
+                    url,
+                    success: (_profile) => {
+                        console.log('PROFILE', _profile)
+                    }
                 })
             } else {
                 console.log('User is NOT signed in.');
@@ -215,6 +251,10 @@ My Public Key: ${this.publicKey}
                         /* Retrieve site info. */
                         const siteInfo = await Zero.cmd('siteInfo', {})
                         console.log('Site info', siteInfo)
+
+                        /* Set authorization key. */
+                        // FIXME `auth_key` is DEPRECATED in Core, replace with Pub/Priv key auth.
+                        this.authKey = siteInfo['auth_key']
 
                         /* Validate user authentication. */
                         if (siteInfo['cert_user_id']) {
