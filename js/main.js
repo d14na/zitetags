@@ -47,6 +47,7 @@ const vueAppManager = {
         userId: null,
         publicKey: null,
         authKey: null, // FIXME `auth_key` is DEPRECATED in Core, replace with Pub/Priv key auth.
+        userType: null, // NOTE [ ADMIN, EDU, LEO, RESIDENT, STAFF ]
 
         /* Search details */
         query: '',
@@ -169,10 +170,6 @@ const vueAppManager = {
                 let url = `https://zitetags.0net.io/profile/${encodeURIComponent(this.publicKey)}`
                 console.log('ENDPOINT', url)
 
-                // $.getJSON(url, (_profile) => {
-                //     console.log('PROFILE', _profile)
-                // })
-
                 /* Initialize data type. */
                 const dataType = 'json'
 
@@ -185,6 +182,16 @@ const vueAppManager = {
                     url,
                     success: (_profile) => {
                         console.log('PROFILE', _profile)
+
+                        if (_profile['doc'] && _profile['doc'].userType) {
+                            /* Retrieve user type. */
+                            const userType = _profile['doc'].userType
+
+                            console.info(`This user has a type [ ${userType} ]`)
+
+                            /* Set user type. */
+                            this.userType = userType
+                        }
                     }
                 })
             } else {
@@ -197,6 +204,29 @@ const vueAppManager = {
             this.successMsg = null
             this.tagAddress = null
             this.showReg = false
+        },
+
+        completeReg: function () {
+            /* Set query. */
+            const query = this.query
+
+            /* Initialize data type. */
+            const dataType = 'json'
+
+            /* Set url. */
+            const url = `https://zitetags.0net.io/name-new/d/${query}`
+
+            $.ajax({
+                beforeSend: (request) => {
+                    request.setRequestHeader('X-0net-Auth-Key', this.authKey)
+                    request.setRequestHeader('X-0net-Public-Key', this.publicKey)
+                },
+                dataType,
+                url,
+                success: (_response) => {
+                    console.log(_response)
+                }
+            })
         },
 
         emailReg: function () {
@@ -305,6 +335,11 @@ My Public Key: ${this.publicKey}
                     this.expiresIn = _data['expires_in']
                     this.height = _data['height']
                     this.txId = _data['txid']
+
+                    if (this.expired) {
+                        /* Set registration flag. */
+                        this.showReg = true
+                    }
                 }
             })
         }

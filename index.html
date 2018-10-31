@@ -124,6 +124,10 @@
                     </div>
                 </div>
 
+                <div :class="{ 'd-flex': expired }" class="d-none fade show mt-3" role="alert">
+                    <button :class="{ 'd-flex': showReg }" @click="register" class="btn btn-info btn-lg">Don't wait! Register it NOW!</button>
+                </div>
+
                 <div class="card mt-3">
                     <div class="card-body">
                         <h6 class="text-center text-muted">CURRENT CONFIGURATION</h6>
@@ -264,31 +268,47 @@
             </ul>
         </footer>
     </div>
-</div>
 
-<!-- Registration Modal -->
-<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="regModalLabel">Zitetag Registration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+    <!-- Registration Modal -->
 
-            <div class="modal-body">
-                NEW Registrations are currently ONLY available via E-mail OR ZeroMail requests.
-                Sorry for the inconvenience.
-            </div>
+    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="regModalLabel">Zitetag Registration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-            <div class="modal-footer">
-                <a href="javascript:App.emailReg()" class="btn btn-info">E-mail</a>
-                <a href="/Mail.ZeroNetwork.bit/?to=d14na" class="btn btn-info">ZeroMail</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div v-if="userType === null">
+                    <div class="modal-body">
+                        NEW Registrations are currently ONLY available via E-mail OR ZeroMail requests.
+                        Sorry for the inconvenience.
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="javascript:App.emailReg()" class="btn btn-info">E-mail</a>
+                        <a href="/Mail.ZeroNetwork.bit/?to=d14na" class="btn btn-info">ZeroMail</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+                <div v-if="userType && userType.includes('ADMIN')">
+                    <div class="modal-body">
+                        Welcome back SUPER USER!
+                        How may I best be of assistance to you on this fine day?
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="javascript:App.completeReg()" class="btn btn-danger">Complete Registration</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Core JS Libraries -->
